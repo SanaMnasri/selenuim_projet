@@ -19,7 +19,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 )
 /**
- * This class is used to run the test, which is JUnit Test Runner Class containing the Step Definition location and 
+ * This class is used to run the test, which is JUnit Test Runner Class containing the Step Definition location and
  * the other primary metadata required to run the test.
  */
 public class RunWebSuiteTest {
