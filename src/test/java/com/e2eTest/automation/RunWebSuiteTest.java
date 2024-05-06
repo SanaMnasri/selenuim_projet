@@ -15,7 +15,10 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
  * integration
  */
 @CucumberOptions(features = { "src/specs/features" }, plugin = { "pretty",
-		"htmL:target/cucumber-report.html" }, tags = (" @login_cas_passant"), monochrome = true, snippets = SnippetType.CAMELCASE
+		"htmL:target/cucumber-report.html" }, tags = (" @login_cas_passant"),
+		//glue{},
+		monochrome = true,
+		snippets = SnippetType.CAMELCASE
 
 )
 /**

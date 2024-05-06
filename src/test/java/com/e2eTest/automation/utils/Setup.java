@@ -8,11 +8,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
+import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Setup {
 	private static WebDriver driver;
-	@io.cucumber.java.Before
+
+	/**
+	 * This method is used to open browser.This method is called before the
+	 * invocation of each test method in the given class. In this method we need to
+	 * pass browser name which will invoke the respective driver.
+	 * 
+	 * @throws malformedURLException the malformed URL exception
+	 * @before Methods annotated with @before will execute before every scenario.
+	 */
+	@Before
 	public void setWebDriver() {
 		String browser = System.getProperty("browser");
 		if (browser == null) {
@@ -20,7 +30,8 @@ public class Setup {
 		}
 		switch (browser) {
 		case "chrome":
-			//System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+			// System.setProperty("webdriver.chrome.driver",
+			// "src/test/resources/drivers/chromedriver.exe");
 			System.setProperty("webdriver.http.factory", "jdk-http-client");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -45,8 +56,9 @@ public class Setup {
 
 		}
 	}
+
 	// Getter /
-		public static WebDriver getDriver() {
-			return driver;
-		}
+	public static WebDriver getDriver() {
+		return driver;
 	}
+}
