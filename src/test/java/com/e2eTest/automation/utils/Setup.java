@@ -7,6 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.PageFactory;
 
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -55,7 +56,9 @@ public class Setup {
 			throw new IllegalArgumentException("Browser \"" + browser + "\"is not supported");
 
 		}
+		
 	}
+	
 
 	// Getter /
 	public static WebDriver getDriver() {

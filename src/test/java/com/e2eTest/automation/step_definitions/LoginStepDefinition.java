@@ -1,10 +1,13 @@
 package com.e2eTest.automation.step_definitions;
 
+import org.junit.Assert;
+
 import com.e2eTest.automation.page_objects.LoginPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 
 public class LoginStepDefinition {
 	public LoginPage  loginPage;
@@ -33,14 +36,21 @@ public class LoginStepDefinition {
 		loginPage.fillPassword(Password);
 	
 	}
+	
 	@When("Je clique sur le bouton login")
 	public void jeCliqueSurLeBoutonLogin() {
 	    loginPage.clickOnBtnLogin();
 	}
-	@Then("Je me rederige vers la page d acceuil")
-	public void jeMeRederigeVersLaPageDAcceuil() {
-	    
+	
+	@Then("Je me rederige vers la page d acceuil {string}")
+	public void jeMeRederigeVersLaPageDAcceuil(String title) {
+		String dashboard_page= LoginPage.msg.getText();
+		Assert.assertEquals(dashboard_page, title);
+	   
 	}
+
+
+
 
 
 
