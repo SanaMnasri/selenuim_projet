@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
  * The @CucumberOptions Annotation is used to define to location of feature
  * files, step definitions, reporting integration
  */
-@CucumberOptions(features = { "src/specs/features" }, plugin = { "pretty",
+@CucumberOptions(features = {"src/specs/features" }, plugin = { "pretty",
 		"html: target/cucumber_report.html" }, tags = (" @login_cas_passant"),
 		// glue{},
 		monochrome = true, snippets = SnippetType.CAMELCASE

@@ -8,9 +8,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import com.e2eTest.automation.utils.ConfigFileReader;
 import com.e2eTest.automation.utils.Setup;
 
 public class LoginPage {
+	private ConfigFileReader configFileReader;
 	/*retrieve element*/
 	
 	@CacheLookup
@@ -24,8 +26,10 @@ public static WebElement Password;
 public static WebElement Btnlogin;
 	@FindBy(how = How.XPATH, using = "//h1[normalize-space()='Dashboard']")
 	public static WebElement msg;
+	
 	public LoginPage() {
 		PageFactory.initElements (Setup.getDriver(), this);
+		this.configFileReader = new ConfigFileReader();
 
        
 	}
@@ -34,8 +38,9 @@ public static WebElement Btnlogin;
 	
 	/*Create method*/
 	public void goToUrl() {
-	Setup.getDriver().get("https://admin-demo.nopcommerce.com/login");
+		Setup.getDriver().get(configFileReader.getProperties("Home.url"));
 	}
+	
 	public void fillEmail(String mail) {
 		
 		email.clear();
