@@ -24,6 +24,8 @@ public static WebElement Password;
 	@CacheLookup
 	@FindBy(how = How.XPATH, using = "//button[@type='submit']")
 public static WebElement Btnlogin;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"navbarText\"]/ul/li[3]/a")
+	public static WebElement Btnlogout;
 	@FindBy(how = How.XPATH, using = "//h1[normalize-space()='Dashboard']")
 	public static WebElement msg;
 	
@@ -56,7 +58,9 @@ public static WebElement Btnlogin;
 		 Btnlogin.click();	
 	   }
 		
-		
+	public void clickOnBtnLogout () {
+		 Btnlogout.click();	
+	   }	
 	}
 	
 

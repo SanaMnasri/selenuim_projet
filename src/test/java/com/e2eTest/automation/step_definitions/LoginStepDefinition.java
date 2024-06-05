@@ -48,6 +48,17 @@ public class LoginStepDefinition {
 		Assert.assertEquals(dashboard_page, title);
 	   
 	}
+	
+	@When("Je clique sur le bouton logout")
+	public void jeCliqueSurLeBoutonLogout() {
+	    loginPage.clickOnBtnLogout();
+	}
+	@Then("Je me dérige vers la page d authentification {string}")
+	public void jeMeDérigeVersLaPageDAuthentification(String string) {
+	     
+	}
+
+
 
 
 
