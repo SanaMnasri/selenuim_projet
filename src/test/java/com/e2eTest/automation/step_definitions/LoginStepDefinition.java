@@ -3,6 +3,7 @@ package com.e2eTest.automation.step_definitions;
 import org.junit.Assert;
 
 import com.e2eTest.automation.page_objects.LoginPage;
+import com.e2eTest.automation.utils.SeleniumUtils;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,9 +12,11 @@ import io.cucumber.java.en.When;
 
 public class LoginStepDefinition {
 	public LoginPage  loginPage;
+	public SeleniumUtils  seleniumUtils;
 
 	public LoginStepDefinition() {
 		loginPage = new LoginPage();
+		seleniumUtils = new SeleniumUtils();
 	}
 	
 	@Given("Je me connecte sur l application nopcommerce")
@@ -25,8 +28,8 @@ public class LoginStepDefinition {
 
 	@When("Je saisis l email {string}")
 	public void jeSaisisLEmail(String email) {
-		loginPage.fillEmail(email);
-	    
+		//loginPage.fillEmail(email);
+		seleniumUtils.writeText(LoginPage.email, email);
 	}
 
 

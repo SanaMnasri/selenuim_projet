@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
  * files, step definitions, reporting integration
  */
 @CucumberOptions(features = {"src/specs/features" }, plugin = { "pretty",
-		"html: target/cucumber_report.html" }, tags = (" @Disconnect "),
+		"html: target/cucumber_report.html" }, tags = ("@remplir_formulaire"),
 		// glue{},
 		monochrome = true, snippets = SnippetType.CAMELCASE
 

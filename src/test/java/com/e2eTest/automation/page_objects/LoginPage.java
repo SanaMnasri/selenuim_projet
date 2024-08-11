@@ -2,6 +2,7 @@ package com.e2eTest.automation.page_objects;
 
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -49,6 +50,7 @@ public static WebElement Btnlogin;
 		email.sendKeys(mail);		
 		
 	}
+
 	public void fillPassword(String pswd) {
 		Password.clear();
 		Password.sendKeys(pswd);		
